@@ -1,0 +1,23 @@
+.eachLesson{
+    height: 200px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10%;
+    color: bisque;
+    font-size: 150%;
+}
+.eachLessonTaken{
+    height: 200px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10%;
+    color: bisque;
+    background-color: green;
+    font-size: 150%;
+}

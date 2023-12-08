@@ -1,9 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import animation  from "./Slices/animationSlice";
+import BackgroundPictue  from "./Slices/timeRun";
+import leftColumnSlice from "./Slices/leftColumn";
+import rightColumnSlice  from "./Slices/rightColumn";
+import allTheLesson from "./Slices/allTheLesson";
 
 
 export const store = configureStore({
     reducer: {
-     transform: animation
+     BackImage: BackgroundPictue,
+     leftColll: leftColumnSlice,
+     rihtColll: rightColumnSlice,
+     allOfTheLessons: allTheLesson
     }
 });

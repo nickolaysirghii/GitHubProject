@@ -1,13 +1,13 @@
 
 import './App.css';
-import Home from './components/1_Home/Home';
+import LearnEria from './components/LearnEria/LearnEria';
 
 function App() {
 
  
   return (
     <div  className="App">
-   <Home />
+    <LearnEria />
      </div>
   );
 }

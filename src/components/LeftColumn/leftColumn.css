@@ -1,0 +1,20 @@
+.leftColumnClosed{
+    height: 100%;
+    width: 20%;
+    background-color: rgb(142, 133, 133);
+    position: absolute;
+    top: 0;
+    left: -18%;
+    cursor: pointer;
+    transition: all 1s;
+}
+.leftColumnOpen{
+    height: 100%;
+    width: 20%;
+    background-color: rgb(142, 133, 133);
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transition: all 1s;
+}

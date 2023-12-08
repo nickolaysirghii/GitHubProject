@@ -1,0 +1,7 @@
+.learnContainer{
+    width: 100%;
+    height: 757px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
