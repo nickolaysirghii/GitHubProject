@@ -4,17 +4,32 @@ const data = [
     {
         id: 1,
         title: "first",
-        idName: "numbOne"
+        idName: "numbOne",
+        theLimit: 3
     },
     {
         id: 2,
         title: "second",
-        idName: "numbTwo"
+        idName: "numbTwo",
+        theLimit: 2
     },
     {
         id: 3,
         title: "third",
-        idName: "numbThree"
+        idName: "numbThree",
+        theLimit: 1
+    },
+    {
+        id: 4,
+        title: "forth",
+        idName: "numbThree",
+        theLimit: 5
+    },
+    {
+        id: 5,
+        title: "fifth",
+        idName: "numbThree",
+        theLimit: 7
     },
 
 ];

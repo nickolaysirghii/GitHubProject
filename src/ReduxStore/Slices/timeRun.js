@@ -3,6 +3,7 @@ import { createSlice  } from "@reduxjs/toolkit";
 const initialState = {
 firstNumb: 0,
 secondNumb: 0,
+speed: 1500,
 limit: 3,
 goLeft: false,
 goStop: false,
@@ -65,6 +66,12 @@ export const BackgroundPictue = createSlice({
         state.goLeft = false;
         state.goStop = false;
         state.goPlay = false;
+      },
+      setLimit: (state , action)=>{
+        state.limit = action.payload
+      },
+      setSpeed: (state , action) =>{
+       state.speed = action.payload
       }
       
     },
@@ -72,5 +79,5 @@ export const BackgroundPictue = createSlice({
 
 );
 export const {timeGoFirst , timeGoSecond , startIt , stopIt , leftIt ,
- pauseIt , rightIt , timeFromStart } = BackgroundPictue.actions;
+ pauseIt , rightIt , timeFromStart , setLimit , setSpeed } = BackgroundPictue.actions;
 export default BackgroundPictue.reducer;

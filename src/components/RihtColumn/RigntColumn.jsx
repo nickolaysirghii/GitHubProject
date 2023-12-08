@@ -4,7 +4,7 @@ import VideoLessons from './Lessons/Lessons';
 import { useSelector , useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { changeRightClass } from '../../ReduxStore/Slices/rightColumn';
-import { startIt  , stopIt , leftIt , pauseIt , rightIt } from '../../ReduxStore/Slices/timeRun';
+import { startIt  , stopIt , leftIt , pauseIt , rightIt , setSpeed } from '../../ReduxStore/Slices/timeRun';
 
 
 const RigntColumn = () => {
@@ -18,11 +18,17 @@ const RigntColumn = () => {
         setStatus(!status)
         dispatcher(changeRightClass(status))
     }
+  
   return (
     <div  className={rightColumnClass}>
       <div className='seengArea'>
         <div className='ChosenLesson'>{chosenLesson.title}</div>
-        <div className='speed'>
+        <div  className='speed'>
+          <div onClick={()=>dispatcher(setSpeed(250))} className='speedButton'>0.5s</div>
+          <div onClick={()=>dispatcher(setSpeed(500))} className='speedButton'>1s</div>
+          <div onClick={()=>dispatcher(setSpeed(750))} className='speedButton'>1.5s</div>
+          <div onClick={()=>dispatcher(setSpeed(1000))} className='speedButton'>2s</div>
+          <div onClick={()=>dispatcher(setSpeed(1250))} className='speedButton'>2.5s</div>
           
         </div>
         <div className='controlBord'>
@@ -33,7 +39,7 @@ const RigntColumn = () => {
           <div onClick={()=>dispatcher(rightIt())} className={goForvard ? "runForwardOn" : "runForward"}></div>
         </div>
         
-        <div onClick={openRight} className='OpenIt'>Open</div>
+        <div onClick={openRight} className='OpenIt'>{status ? "open" : "close"}</div>
       </div>
       <div className='hiddenArea'>
       {

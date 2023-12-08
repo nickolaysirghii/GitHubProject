@@ -9,19 +9,19 @@ import "../dataBase/thirdFolder/threeFoder.css";
 
 const PictureWindow = () => {
    const dispatcher = useDispatch();
-  const { firstNumb , secondNumb , goPlay , limit} = useSelector(state=>state.BackImage);
+  const { firstNumb , secondNumb , goPlay , limit , speed} = useSelector(state=>state.BackImage);
   const { chosenLesson } = useSelector(state => state.allOfTheLessons);
    
   if(goPlay){
     if(firstNumb === secondNumb){
       setTimeout(() => {
       dispatcher(timeGoFirst())
-      },1500);
+      },speed);
     }else{
       if(secondNumb !== limit){
         setTimeout(() => {
           dispatcher(timeGoSecond())
-          },1500);
+          },speed);
        }
       }
   }
