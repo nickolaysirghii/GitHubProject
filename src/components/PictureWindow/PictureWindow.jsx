@@ -1,6 +1,6 @@
-import React from 'react';
+import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
-import { timeGoFirst , timeGoSecond  } from '../../ReduxStore/Slices/timeRun';
+import { timeGoFirst } from '../../ReduxStore/Slices/timeRun';
 import "../dataBase/firstFolder/oneFolder.css";
 import "../dataBase/sedondFolder/twoFolder.css";
 import "../dataBase/thirdFolder/threeFoder.css";
@@ -9,22 +9,21 @@ import "../dataBase/thirdFolder/threeFoder.css";
 
 const PictureWindow = () => {
    const dispatcher = useDispatch();
-  const { firstNumb , secondNumb , goPlay , limit , speed} = useSelector(state=>state.BackImage);
+  const { thePath , firstNumb , goPlay , limit , speed} = useSelector(state=>state.BackImage);
   const { chosenLesson } = useSelector(state => state.allOfTheLessons);
-   
-  if(goPlay){
-    if(firstNumb === secondNumb){
-      setTimeout(() => {
-      dispatcher(timeGoFirst())
-      },speed);
-    }else{
-      if(secondNumb !== limit){
-        setTimeout(() => {
-          dispatcher(timeGoSecond())
-          },speed);
-       }
+ 
+  function logNumbersWithDelay(numbers) {
+    let index = 0;
+    function logNumber() {
+      if (index < numbers.length && goPlay && index < limit) {
+        dispatcher(timeGoFirst(numbers[index]))
+        index++;
+        setTimeout(logNumber, speed);
       }
+    }
+   logNumber();
   }
+ useEffect(()=>logNumbersWithDelay(thePath), [goPlay])
 
     const pictureStyle = {
       width: "85%",
@@ -34,7 +33,6 @@ const PictureWindow = () => {
       marginLeft: "2%",
       backgroundColor: "rgb(55, 54, 54)"
     }
-    //numbOne1 numbTwo1 numbThree1
   return (
     <div style={pictureStyle} className={`${chosenLesson.idName}${firstNumb}`} >
        

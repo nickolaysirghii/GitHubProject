@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 
 
+
 const LeftColumn = () => {
   const dispatcher = useDispatch();
   const { leftColumnClass } = useSelector(state => state.leftColll);
@@ -15,6 +16,7 @@ const classChanger = ()=>{
   setStatus(!status)
   dispatcher(changeClass(status))
 }
+
 return (
     <div onClick={classChanger}  className={leftColumnClass}>
     </div>

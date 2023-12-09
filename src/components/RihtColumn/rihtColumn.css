@@ -144,3 +144,54 @@
     font-size: 80%;
     cursor: pointer;
 }
+.speedButtonOn{
+    height: 100%;
+    width: 20%;
+    border: 1px solid black;
+    background-color:gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80%;
+    cursor: pointer;
+}
+.straightOr{
+    width: 100%;
+    height: 5.5%;
+    background-color: white;
+    position: absolute;
+    bottom: 21%;
+    display: flex;
+    cursor: pointer;
+    background-color: black;
+}
+.stryght{
+    height: 100%;
+    width: 50%;
+    background-image: url(../../../public/pictures/straight.png);
+    background-size: contain;
+}
+.stryghtOn{
+    height: 100%;
+    width: 50%;
+    background-color: burlywood;
+    background-image: url(../../../public/pictures/straight.png);
+    background-size: contain;
+    opacity: 0.54;
+}
+.notStryght{
+    height: 100%;
+    width: 50%;
+    background-color: rgb(135, 222, 150);
+    background-image: url(../../../public/pictures/tangled.png);
+    background-size: contain;
+}
+.notStryghtOn{
+    height: 100%;
+    width: 50%;
+    background-color: rgb(135, 222, 150);
+    background-image: url(../../../public/pictures/tangled.png);
+    background-size: contain;
+    opacity: 0.54;
+
+}

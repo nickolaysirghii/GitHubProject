@@ -5,6 +5,7 @@ import RigntColumn from '../RihtColumn/RigntColumn';
 import PictureWindow from '../PictureWindow/PictureWindow';
 
 const LearnEria = () => {
+
   return (
     <div className='learnContainer'>
       <LeftColumn />

@@ -17,7 +17,7 @@ const data = [
         id: 3,
         title: "third",
         idName: "numbThree",
-        theLimit: 1
+        theLimit: 6
     },
     {
         id: 4,
