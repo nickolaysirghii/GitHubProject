@@ -13,9 +13,19 @@ const VideoLessons = ({elem}) => {
     dispatcher(setLimit(elem.theLimit))
     setStatusClass(!statusClass)
   }
+  const pictureStyle = {
+    width: "90%",
+    height: "90%",
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    marginLeft: "2%",
+    backgroundColor: "rgb(55, 54, 54)"
+  }
 
   return (
-    <div onClick={takeIt} className={statusClass ? "eachLessonTaken" : "eachLesson"}>{elem.title}</div>
+    <div onClick={takeIt}  className={statusClass ? "eachLessonTaken" : "eachLesson"}>
+     <div style={pictureStyle}  className={`${elem.word}0`}>{elem.id}</div> 
+    </div>
   )
 }
 

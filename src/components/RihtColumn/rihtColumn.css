@@ -30,7 +30,9 @@
     display: grid;  
     grid-template-columns: repeat(4,1fr);
     gap: 5%; 
-    padding: 2%;
+    padding-top: 70px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 .ChosenLesson{
     width: 80%;
@@ -193,5 +195,23 @@
     background-image: url(../../../public/pictures/tangled.png);
     background-size: contain;
     opacity: 0.54;
+
+}
+.selectBy{
+    width: 80%;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.selectBy > div{
+    height: 100%;
+    width: 100px;
+    background-color: rgb(131, 42, 42);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }

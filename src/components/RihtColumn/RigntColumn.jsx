@@ -3,6 +3,7 @@ import "./rihtColumn.css";
 import VideoLessons from './Lessons/Lessons';
 import { useSelector , useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { sortLessons } from '../../ReduxStore/Slices/allTheLesson';
 import { changeRightClass } from '../../ReduxStore/Slices/rightColumn';
 import { startIt  , stopIt , leftIt , pauseIt , rightIt , setSpeed , 
 setStraight } from '../../ReduxStore/Slices/timeRun';
@@ -21,11 +22,20 @@ const RigntColumn = () => {
         setStatus(!status)
         dispatcher(changeRightClass(status))
     }
+    const pictureStyle = {
+      width: "90%",
+      height: "180px",
+      marginTop: "30px",
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
+      marginLeft: "2%",
+      backgroundColor: "rgb(55, 54, 54)"
+    }
    
   return (
     <div  className={rightColumnClass}>
       <div className='seengArea'>
-        <div className='ChosenLesson'>{chosenLesson.title}</div>
+        <div style={pictureStyle} className={`${chosenLesson.word}0`}></div>
         <div className='straightOr'>
           <div onClick={()=>dispatcher(setStraight())} className={straight ? "stryghtOn" : "stryght" }></div>
           <div onClick={()=>dispatcher(setStraight())} className={tangled ? "notStryghtOn" : "notStryght"}></div>
@@ -51,6 +61,15 @@ const RigntColumn = () => {
         <div onClick={openRight} className='OpenIt'>{status ? "open" : "close"}</div>
       </div>
       <div className='hiddenArea'>
+        <div className='selectBy'>
+          <div onClick={()=>dispatcher(sortLessons("firstNew"))}>firstNew</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+        </div>
       {
         Lessons.map((elem , idx) => {
           return <VideoLessons key={idx} elem = {elem} />

@@ -1,42 +1,10 @@
 import { createSlice  } from "@reduxjs/toolkit";
 
-const data = [
-    {
-        id: 1,
-        title: "first",
-        idName: "numbOne",
-        theLimit: 3
-    },
-    {
-        id: 2,
-        title: "second",
-        idName: "numbTwo",
-        theLimit: 2
-    },
-    {
-        id: 3,
-        title: "third",
-        idName: "numbThree",
-        theLimit: 6
-    },
-    {
-        id: 4,
-        title: "forth",
-        idName: "numbThree",
-        theLimit: 5
-    },
-    {
-        id: 5,
-        title: "fifth",
-        idName: "numbThree",
-        theLimit: 7
-    },
-
-];
+let StorageArray = JSON.parse(localStorage.getItem("PickOnArray"));
 
 const initialState = {
-Lessons: data,
-chosenLesson: data[0]
+Lessons: StorageArray,
+chosenLesson: StorageArray[0]
 
 };
 export const AllTheLessons = createSlice({
@@ -44,10 +12,19 @@ export const AllTheLessons = createSlice({
     initialState,
     reducers: {
     pickUpLesson: (state , action) => {
-        state.chosenLesson = data.find((element) => element.id === action.payload);
+        state.chosenLesson = StorageArray.find((element) => element.id === action.payload);
+    },
+    sortLessons: (state , action) => {
+        const XLess = []
+        state.Lessons.forEach((elem) => {
+            if(elem.title === action.payload){
+             XLess.push(elem)
+            }
+        });
+        state.Lessons = XLess
     }
     },
 }
 );
-export const { pickUpLesson } = AllTheLessons.actions;
+export const { pickUpLesson , sortLessons } = AllTheLessons.actions;
 export default AllTheLessons.reducer;

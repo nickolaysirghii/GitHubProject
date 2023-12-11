@@ -34,7 +34,7 @@ const PictureWindow = () => {
       backgroundColor: "rgb(55, 54, 54)"
     }
   return (
-    <div style={pictureStyle} className={`${chosenLesson.idName}${firstNumb}`} >
+    <div style={pictureStyle} className={`${chosenLesson.word}${firstNumb}`} >
        
     </div>
   )
